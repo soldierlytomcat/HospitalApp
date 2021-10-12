@@ -66,6 +66,7 @@ $(document).ready(function() {
         };
     }
 
+    // Sends request to add new patient
     function createNewPatient() {
         $.ajax({
             url: `${proxyurl + baseUrl}/auth/register`,
@@ -85,10 +86,35 @@ $(document).ready(function() {
         });
     }
 
+    function getVisitData() {
+        return {
+
+        }
+    }
+
+    function createNewVisit() {
+        $.ajax({
+            url: `${proxyurl + baseUrl}/visit`,
+            type: 'POST',
+            dataType: 'json', // added data type,
+            data: getVisitData(),
+
+            success: function(res) {
+                console.log(res);
+                alert(res);
+            },
+
+            error: function(res) {
+                console.log(res);
+                alert(res);
+            }
+        });
+    }
+
     function getReviewVisits() {
         $.ajax({
             url: `${baseUrl}/visit`,
-            type: 'POST',
+            type: 'GET',
             dataType: 'json', // added data type
             success: function(res) {
                 console.log(res);
@@ -96,4 +122,24 @@ $(document).ready(function() {
             }
         });
     }
+
+    function createNewDiagnosis() {
+        $.ajax({
+            url: `${proxyurl + baseUrl}/`,
+            type: 'POST',
+            dataType: 'json', // added data type,
+            data: getVisitData(),
+
+            success: function(res) {
+                console.log(res);
+                alert(res);
+            },
+
+            error: function(res) {
+                console.log(res);
+                alert(res);
+            }
+        });
+    }
+
 });
