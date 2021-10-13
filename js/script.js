@@ -4,22 +4,22 @@ $(document).ready(function() {
     let pages = ['js-dashboard'];
 
 
-    $('.js-dashboard, .nav-page').on('click', function() {
-        $('.js-dashboard-page').removeClass('d-none');
-        $('.js-dashboard').addClass('active');
-        $('.js-review-visits-page').addClass('d-none');
-        $('.js-review-visits').removeClass('active');
+    // $('.js-dashboard, .nav-page').on('click', function() {
+    //     $('.js-dashboard-page').removeClass('d-none');
+    //     $('.js-dashboard').addClass('active');
+    //     $('.js-review-visits-page').addClass('d-none');
+    //     $('.js-review-visits').removeClass('active');
 
-    });
+    // });
 
-    $('.js-review-visits').on('click', function() {
-        $('.js-dashboard-page').addClass('d-none');
-        $('.js-dashboard').removeClass('active');
-        $('.js-review-visits-page').removeClass('d-none');
-        $('.js-review-visits').addClass('active');
+    // $('.js-review-visits').on('click', function() {
+    //     $('.js-dashboard-page').addClass('d-none');
+    //     $('.js-dashboard').removeClass('active');
+    //     $('.js-review-visits-page').removeClass('d-none');
+    //     $('.js-review-visits').addClass('active');
 
-        getReviewVisits();
-    });
+    //     getReviewVisits();
+    // });
 
 
     $('.js-new-patient-btn').on('click', function() {
@@ -30,7 +30,13 @@ $(document).ready(function() {
     $('.js-generate-upi').on('click', function(e) {
         e.preventDefault();
         createNewPatient();
-    })
+    });
+
+    $('.js-get-record-btn').on('click', function(e) {
+        e.preventDefault();
+        $('.js-upi-form').addClass('d-none');
+        $('.js-record-page').removeClass('d-none');
+    });
 
 
     function setHash(hash) {
@@ -71,17 +77,17 @@ $(document).ready(function() {
         $.ajax({
             url: `${proxyurl + baseUrl}/auth/register`,
             type: 'POST',
-            dataType: 'json', // added data type,
+            dataType: 'application/json', // added data type,
             data: getNewPatientData(),
 
             success: function(res) {
                 console.log(res);
-                alert(res);
+                // alert(res);
             },
 
             error: function(res) {
                 console.log(res);
-                alert(res);
+                // alert(res);
             }
         });
     }
@@ -101,12 +107,12 @@ $(document).ready(function() {
 
             success: function(res) {
                 console.log(res);
-                alert(res);
+                // alert(res);
             },
 
             error: function(res) {
                 console.log(res);
-                alert(res);
+                // alert(res);
             }
         });
     }
@@ -118,7 +124,7 @@ $(document).ready(function() {
             dataType: 'json', // added data type
             success: function(res) {
                 console.log(res);
-                alert(res);
+                // alert(res);
             }
         });
     }
@@ -132,12 +138,12 @@ $(document).ready(function() {
 
             success: function(res) {
                 console.log(res);
-                alert(res);
+                // alert(res);
             },
 
             error: function(res) {
                 console.log(res);
-                alert(res);
+                // alert(res);
             }
         });
     }

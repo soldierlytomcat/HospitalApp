@@ -19,10 +19,11 @@
         <div class="side col-2">
             <div class="buttons px-3 py-5">
                 <nav class="nav nav-pills flex-column">
-                    <a class="flex-sm-fill nav-link js-dashboard active" aria-current="page" href="#">Dashboard</a>
-                    <a class="flex-sm-fill nav-link js-review-visits" href="#">View Records</a>
-                    <a class="flex-sm-fill nav-link" href="#">New Patients</a>
-                    <a class="flex-sm-fill nav-link disabled">Settings</a>
+                    <a class="flex-sm-fill nav-link js-dashboard" aria-current="page" href="dashboard.html">Dashboard</a>
+                    <a class="flex-sm-fill nav-link active" href="medical-record.html">View Records</a>
+                    <a class="flex-sm-fill nav-link" href="new-diagnosis.html">New Diagnosis</a>
+                    <a class="flex-sm-fill nav-link" href="new-patient.html">Visitation</a>
+                    <!-- <a class="flex-sm-fill nav-link disabled">Settings</a> -->
                 </nav>
             </div>
         </div>
@@ -32,7 +33,7 @@
                 <h2 class="mb-5">Medical Records</h2>
 
                 <!-- <div class="card" style="width: 18rem;"> -->
-                <div class="content-wrapper d-flex flex-row">
+                <div class="content-wrapper d-flex flex-row js-upi-form">
                     <!-- <div class="card mx-1">
                         <div class="card-body">
                             <h5 class="card-title">Medical Records</h5>
@@ -52,24 +53,15 @@
                                     <input type="text" class="form-control" id="upi" placeholder="Password">
                                 </div>
                                 <div class="col-auto">
-                                    <button type="submit" class="btn btn-primary">Get patient's info</button>
+                                    <button type="submit" class="btn btn-primary js-get-record-btn">Get patient's info</button>
                                 </div>
                             </form>
                             <div id="upiInfo" class="form-text">Please ensure this UPI is valid and already registered</div>
                         </div>
 
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Medical Records</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">2 patients</h6>
-                                <p class="card-text">View patients medical records by their UDI and given permision</p>
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
-                            </div>
-                        </div>
 
                         <!-- Readonly form -->
-                        <form class="mb-4">
+                        <form class=" d-none mb-4">
                             <div class="mb-3 row">
                                 <label for="upiReadonly" class="col-sm-2 col-form-label">UPI</label>
                                 <div class="col-sm-10">
@@ -106,30 +98,74 @@
                             </div>
                         </form>
 
-                        <form>
-                            <div class="mb-3">
-                                <label for="symptoms" class="form-label">UPI</label>
-                                <textarea class="form-control" id="symptoms" rows="3"></textarea>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="diagnosis" class="form-label">Diagnosis</label>
-                                <textarea class="form-control" id="diagnosis" rows="2"></textarea>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="treatment" class="form-label">Treatment</label>
-                                <textarea class="form-control" id="treatment" rows="2"></textarea>
-                            </div>
-
-
-
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </form>
                     </div>
 
 
                 </div>
+
+
+                <div class="d-none js-record-page content-wrapper d-flex flex-row justify-content-around">
+                    <div class="card w-100 dash-card me-3">
+                        <div class="card-body">
+                            <div class="content p-3">
+                                <h5 class="card-title mb-1 text-primary">28th September, 2021</h5>
+
+                                <h4 class="card-subtitle mb-2 text-muted mt-4">Vital Signs</h4>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Temperature</li>
+                                    <li class="list-group-item">Weight</li>
+                                    <li class="list-group-item">Blood Pressure</li>
+                                    <li class="list-group-item">Pulse Rate</li>
+                                </ul>
+
+                                <h4 class="card-subtitle mb-2 text-muted mt-4">Symptoms</h4>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Headache</li>
+                                    <li class="list-group-item">Loss of appetite</li>
+                                    <li class="list-group-item">Sleeping for long hours</li>
+                                </ul>
+
+                                <h4 class="card-subtitle mb-2 text-muted mt-4">Comments</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed beatae exercitationem saepe fugiat illum, alias voluptates molestiae, repudiandae culpa in dicta quam facere quaerat inventore quis laborum impedit enim quo.</p>
+
+
+                                <ul class="list-group list-group-flush mt-3">
+                                    <li class="list-group-item">
+                                        <a href="#" class="card-link js-past-diagnosis">PAST DIAGNOSIS</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="card-link js-all-tests">ALL TESTS</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="card-link js-view-medications">VIEW MEDICATIONS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card w-100 dash-card">
+                        <div class="card-body">
+                            <div class="content p-3">
+                                <h5 class="card-title mb-2">Patient's Profile</h5>
+
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Name: John Mxxxxxxkl</li>
+                                    <li class="list-group-item">Age: 27</li>
+                                    <li class="list-group-item">Sex: Male</li>
+                                    <li class="list-group-item">Marital Status: Married</li>
+                                    <li class="list-group-item">Phone: 09082283848</li>
+                                    <li class="list-group-item">Address: 3, Way street up creek paddle</li>
+                                </ul>
+
+                                <a href="#" class="btn btn-outline-primary mt-4 px-3">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
 
